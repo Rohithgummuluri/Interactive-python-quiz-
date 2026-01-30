@@ -1,0 +1,58 @@
+def check_answer(question, options, correct_answer):
+    """Function to ask a question, display the options, and check user's answer"""
+    print("\n" + question)
+    
+    for option in options:
+        print(option)
+    
+    # Get user input
+    user_input = input("\nEnter your option (A/B/C/D): ").strip().upper()
+    
+    # Check the user's answer
+    if user_input == correct_answer:
+        print("\nCorrect Answer!")
+        return 1
+    else:
+        print(f"\nWrong answer! The correct option is {correct_answer}")
+        return 0
+
+
+def run_quiz():
+    """Main function to run the quiz"""
+    print("\nWELCOME TO THE PYTHON QUIZ GAME")
+    print("\nAnswer the following 5 questions")
+    
+    # Initialize score
+    score = 0
+    
+    # Display questions
+    score += check_answer("1. What is the capital city of France?",
+                          ['A. Berlin', 'B. Mumbai', 'C. Paris', 'D. Sydney'], 'C')
+    
+    score += check_answer("2. Which keyword is used in Python to define a function?",
+                          ['A. func', 'B. def', 'C. fun', 'D. function'], 'B')
+    
+    score += check_answer("3. What is the output of print(2 + 3 * 2)?",
+                          ['A. 10', 'B. 8', 'C. 12', 'D. 7'], 'A')
+    
+    score += check_answer("4. Which planet is known as the 'Red planet'?",
+                          ['A. Earth', 'B. Venus', 'C. Mercury', 'D. Mars'], 'D')
+    
+    score += check_answer("5. What will len('Python is fun!') return?",
+                          ['A. 12', 'B. 3', 'C. 14', 'D. 11'], 'C')
+    
+    # Display final score
+    print(f"\nYour final score is: {score}")
+    
+    # Display a message based on score
+    if score == 5:
+        print("Excellent! You got all correct!")
+    elif score >= 3:
+        print("Well done! You are almost there!")
+    else:
+        print("You need more practice! Better luck next time!")
+
+
+# Run the quiz
+run_quiz()
+https://github.com/Rohithgummuluri/Interactive-python-quiz-.git
